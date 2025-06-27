@@ -1,3 +1,7 @@
 .env
 .idea
 .DS_Store
+secrets.yaml
+postgres-secret.yaml
+*.secret.yaml
+googly-data
