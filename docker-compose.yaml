@@ -1,0 +1,33 @@
+version: "3.8"
+services:
+  backend:
+    container_name: googly-backend
+    build: .
+    env_file:
+      - .env
+    ports:
+      - 8080:8080
+    depends_on:
+      - database
+    networks:
+      - googly_net
+    command: sh -c "sleep 5 && ./main"
+
+  database:
+    container_name: googly-db
+    image: postgres:16
+    restart: unless-stopped
+    ports:
+      - 5436:5432
+    environment:
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_NAME}
+    volumes:
+      - ./googly-data:/var/lib/postgresql/data:rw
+
+    networks:
+      - googly_net
+
+networks:
+  googly_net:
