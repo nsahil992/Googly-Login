@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Googly Login</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <div class="card">
+        <div class="logo-container">
+            <!-- Playful Google-like logo with animated letters -->
+            <div class="logo">
+                <span class="letter g">G</span>
+                <span class="letter o1">o</span>
+                <span class="letter o2">o</span>
+                <span class="letter g2">g</span>
+                <span class="letter l">l</span>
+                <span class="letter y">y</span>
+            </div>
+            <p class="tagline">Where logging in is actually fun</p>
+        </div>
+
+        <div class="tabs">
+            <button class="tab-btn active" data-form="login">Sign in</button>
+            <button class="tab-btn" data-form="register">Create account</button>
+        </div>
+
+        <div class="form-container">
+            <!-- Login Form -->
+            <form id="loginForm" class="active">
+                <h2>Welcome back, human!</h2>
+                <p class="subtitle">Use your Googly Account</p>
+
+                <div class="input-group">
+                    <input type="email" id="loginEmail" required>
+                    <label for="loginEmail">Email or phone</label>
+                    <div class="funny-icon">📧</div>
+                </div>
+
+                <div class="input-group">
+                    <input type="password" id="loginPassword" required>
+                    <label for="loginPassword">Password</label>
+                    <div class="funny-icon">🔒</div>
+                </div>
+
+                <div class="form-actions">
+                    <div class="helper-text">Not your computer? Use Guest mode to sign in privately.</div>
+                    <button type="submit">Sign in</button>
+                </div>
+
+                <p class="form-message" id="loginMessage"></p>
+                <div class="witty-message">Passwords are like underwear... make them mysterious but don't share them!</div>
+            </form>
+
+            <!-- Registration Form -->
+            <form id="registerForm">
+                <h2>Join the cool club!</h2>
+                <p class="subtitle">Create your Googly Account</p>
+
+                <div class="input-group">
+                    <input type="text" id="name" required>
+                    <label for="name">Your awesome name</label>
+                    <div class="funny-icon">👤</div>
+                </div>
+
+                <div class="input-group">
+                    <input type="email" id="email" required>
+                    <label for="email">Email (no spam, we promise!)</label>
+                    <div class="funny-icon">📩</div>
+                </div>
+
+                <div class="input-group">
+                    <input type="password" id="password" required>
+                    <label for="password">A secret only you know</label>
+                    <div class="funny-icon">🤫</div>
+                </div>
+
+                <div class="form-actions">
+                    <div class="helper-text">By signing up, you agree to pretend you've read our Terms of Service</div>
+                    <button type="submit">Create Account</button>
+                </div>
+
+                <p class="form-message" id="registerMessage"></p>
+                <div class="witty-message">Don't worry, we won't judge your password strength (but our algorithm might)</div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div id="successBanner" class="success-banner hidden">
+    <div class="banner-content">
+        <div class="banner-icon">🎉</div>
+        <p id="successMessage"></p>
+    </div>
+</div>
+
+<footer>
+    <div class="footer-links">
+        <a href="#">About</a>
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">Help</a>
+    </div>
+    <div class="language-selector">
+        <select>
+            <option>English (United States)</option>
+            <option>Español</option>
+            <option>Français</option>
+            <option>Pirate Speak</option>
+            <option>Emoji Only</option>
+        </select>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
