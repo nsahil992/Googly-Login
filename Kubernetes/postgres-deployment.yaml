@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: postgres-deployment
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: postgres
@@ -26,9 +26,9 @@ spec:
           volumeMounts:
             - mountPath: /var/lib/postgresql/data
               name: googly-data
-      
+
 
       volumes:
         - name: googly-data
           persistentVolumeClaim:
-            claimName: postgres-pvc
+            claimName: googly-postgres-pvc
