@@ -4,10 +4,10 @@ metadata:
   name: googly-postgres-pv
 spec:
   capacity:
-    storage: 1Gi
+    storage: {{ .Values.postgres.pvc.storage }}
   accessModes:
     - ReadWriteOnce
-  storageClassName: manual
+  storageClassName: {{ .Values.postgres.pvc.storageClass }}
   persistentVolumeReclaimPolicy: Retain
   hostPath:
-    path: /Users/Sahil/Desktop/Googly-Login/googly-data
+    path: {{ .Values.postgres.pvc.path }}

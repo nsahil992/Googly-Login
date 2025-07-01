@@ -1,0 +1,16 @@
+googly:
+  image: nsahil992/googly-login:v4
+  replicas: 1
+  service:
+    type: NodePort
+    port: 80
+    targetPort: 8080
+    nodePort: 30110
+
+postgres:
+  image: postgres:16
+  pvc:
+    storage: 1Gi
+    storageClass: manual
+    path: /Users/Sahil/Desktop/Googly-Login/googly-data
+

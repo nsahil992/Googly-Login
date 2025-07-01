@@ -5,9 +5,9 @@ metadata:
 spec:
   selector:
     app: googly-login
-  type: NodePort
+  type: {{ .Values.googly.service.type }}
   ports:
-    - port: 80
-      targetPort: 8080
-      nodePort: 30110
+    - port: {{ .Values.googly.service.port }}
+      targetPort: {{ .Values.googly.service.targetPort }}
+      nodePort: {{ .Values.googly.service.nodePort }}
       protocol: TCP

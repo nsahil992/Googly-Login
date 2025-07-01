@@ -1,0 +1,35 @@
+# Default deny all ingress and egress in the namespace
+
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: default-deny
+spec:
+  podSelector: {}
+  policyTypes:
+  - Ingress
+  - Egress
+
+
+---
+
+# Allow Go App to access Postgres on port 5432
+
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: allow-go-to-postgres
+spec:
+  podSelector:
+    matchLabels:
+      app: postgres
+  policyTypes:
+  - Ingress
+  ingress:
+    - from:
+        - podSelector:
+            matchLabels:
+              app: googly-login
+      ports:
+        - protocol: TCP
+          port: 5432
