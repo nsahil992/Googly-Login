@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: googly-deployment
 spec:
-  replicas: 1
+  replicas: {{ .Values.googly.replicas }}
   selector:
     matchLabels:
       app: googly-login
@@ -14,9 +14,9 @@ spec:
     spec:
       containers:
         - name: googly-login
-          image: nsahil992/googly-login:v2
+          image: {{ .Values.googly.image }}
           ports:
-            - containerPort: 8080
+            - containerPort: {{ .Values.googly.service.targetPort }}
           env:
             - name: DB_HOST
               value: "postgres-service"
