@@ -128,7 +128,7 @@ Googly-Login/
 
 ```bash
 # Clone the repo
-git clone https://github.com/yourusername/googly-login
+git clone https://github.com/nsahil992/googly-login
 cd googly-login
 
 # Copy .env.example and set values (never commit .env!)
